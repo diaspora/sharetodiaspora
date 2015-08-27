@@ -3,19 +3,19 @@ Advanced Sharer for diaspora*
 
 Advanced Sharer is a tool able to share links to any 
 [diaspora*](http://github.com/diaspora/diaspora) pod. 
-[Learn more](http://sharetodiaspora.github.io/about).
+[Learn more](https://share.diasporafoundation.org/about).
 
 ## Usage
 The same parameters from diaspora* bookmarklets for title, 
 URL and notes can be used, just add them to the URL:
 
 ```
-http://sharetodiaspora.github.io/?url=diasporafoundation.org&title=The%20diaspora*%20Project&notes=Welcome%20to%20diaspora*
+https://share.diasporafoundation.org/?url=diasporafoundation.org&title=The%20diaspora*%20Project&notes=Welcome%20to%20diaspora*
 ```
 
-[Try it!](http://sharetodiaspora.github.io/?url=diasporafoundation.org&title=The%20diaspora*%20Project&notes=Welcome%20to%20diaspora*)
+[Try it!](https://share.diasporafoundation.org/?url=diasporafoundation.org&title=The%20diaspora*%20Project&notes=Welcome%20to%20diaspora*)
 
-You can use [sharing buttons and a custom bookmarklet](http://sharetodiaspora.github.io/about) 
+You can use [sharing buttons and a custom bookmarklet](https://share.diasporafoundation.org/about) 
 to create these links. There's also a [Firefox extension](https://github.com/jaywink/diaspora-advanced-sharer)
 and a [Wordpress plugin](https://github.com/ciubotaru/share-on-diaspora/).
 
