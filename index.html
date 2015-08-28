@@ -1,16 +1,4 @@
 <!DOCTYPE html>
-<!--
-
-  diaspora* Advanced Sharer
-     based on Diaspora* Sharing Service by Jason Robinson | jaywink@iliketoast.net
-
-     Contributors:
-        David Charte | bartimeo@joindiaspora.com
-        Jason Robinson | jaywink@iliketoast.net
-
-     This code is completely free. Don't hesitate to copy, modify or distribute it.
-
--->
 <html>
   <head>
     <title>Share on diaspora*</title>
@@ -239,7 +227,7 @@
       var redirect = function() {
         if (title===""&&url==="") {
           document.querySelector('body').innerHTML = '';
-          location.href="./about";
+          location.href="./about.html";
         } else {
           if (localStorage.remember && localStorage.remember === "true" && localStorage.lastPod && redir !== "false") {
             document.querySelector('body').innerHTML="Sharing <b>"+title+"</b> ("+url+") to "+localStorage.lastPod;

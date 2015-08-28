@@ -1,38 +1,13 @@
 ---
-
 ---
 
 <!DOCTYPE html>
-<!--
-
-	diaspora* Advanced Sharer About Page
-	   based on Diaspora* Sharing Service by Jason Robinson | jaywink@iliketoast.net
-
-	   Contributors:
-	      David Charte | bartimeo@joindiaspora.com
-	      Jason Robinson | jaywink@iliketoast.net
-
-	   This code is completely free. Don't hesitate to copy, modify or distribute it.
-
--->
 <html>
 	<head>
-		{% if site.enforce_ssl %}
-		<!--
-		     Enforcing SSL
-		     https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it
-		-->
-		<script type="text/javascript">
-			var enforce = "{{ site.enforce_ssl }}";
-			if ((enforce == window.location.host) && (window.location.protocol != "https:"))
-			window.location = window.location.toString().replace(/^http:/, "https:");
-		</script>
-		{% endif %}
-
 		<title>Advanced Sharer for diaspora*</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8" />
-		<link rel="canonical" href="{{site.root_url}}/about/" />
+		<link rel="canonical" href="{{site.root_url}}/about.html" />
 		<link rel="stylesheet" href="../css/about.css">
 		<link rel="localization" href="../locales/manifest.json" />
 		<script type="text/javascript" src="../js/l20n.min.js"></script>
@@ -153,7 +128,7 @@
 				    "name": "Share to Diaspora*",
 				    "description": "Diaspora* is a social network where you keep control.",
 				    "author": "kemenaran",
-				    "homepageURL": "{{site.root_url}}/about/",
+				    "homepageURL": "{{site.root_url}}/about.html",
 				    "iconURL":   "{{site.root_url}}/assets/diaspora-icon-16.png",
 				    "icon32URL": "{{site.root_url}}/assets/diaspora-icon-32.png",
 				    "icon64URL": "{{site.root_url}}/assets/diaspora-icon-64.png",
@@ -171,39 +146,18 @@
 				<a href="https://addons.mozilla.org/es/firefox/addon/diaspora-advanced-sharer/">diaspora* Advanced Sharer</a>
 				by <a href="https://iliketoast.net/u/jaywink">Jason Robinson</a> adds a sharing button to Mozilla Firefox.
 			</article>
-
-			<article>
-				<h3>Contributors</h3>
-				Based on <i>diaspora* Sharing Service</i> by <a href="https://iliketoast.net/u/jaywink">Jason Robinson</a>.
-
-				<p></p>
-
-				Developed by <a href="https://joindiaspora.com/u/fdavidcl">David Charte</a>, with contributions from:
-				<ul>
-					<li><a href="https://iliketoast.net/u/jaywink">Jason Robinson</a></li>
-          			<li><a href="https://diaspora-fr.org/u/cypouz">Cypouz</a></li>
-					<li><a href="https://diasp.eu/u/muggenhor">Giel van Schijndel</a></li>
-					<li><a href="https://framasphere.org/u/sebastienadam">Sébastien Adam</a></li>
-					<li><a href="https://github.com/kemenaran">Pierre de la Morinerie</a></li>
-				</ul>
-
-				<p></p>
-
-				Localizations provided by:
-				<ul>
-					<li><a href="https://diasp.eu/u/kensan">Sandro Kensan</a> (Italian)</li>
-					<li><a href="https://joindiaspora.com/u/vitalie_ciubotaru">Vitalie Ciubotaru</a> (Russian)</li>
-					<li><a href="https://wk3.org/u/marty_crabneck">Marty Crabneck</a> (German)</li>
-					<li><a href="https://framasphere.org/u/situphen">Situphen</a> (French)</li>
-					<li><a href="https://joindiaspora.com/u/rysiek">rysiek</a> (Polish)</li>
-				</ul>
-
-				<p></p>
-			</article>
-
 			<footer>
-				Want to help or fork the project? The source code is available at
-				<a href="https://github.com/sharetodiaspora/sharetodiaspora.github.com">Github</a>. You are free to copy, modify and distribute it.
+        <p>
+          This project was created by
+          <a href="{{site.root_url}}/humans.txt">Awesome Contributors</a> and is
+          licensed under the
+          <a target="_blank" href="http://www.gnu.org/licenses/agpl-3.0.html">AGPL</a>.
+        </p>
+        <p>
+          Want to help or fork the project? The source code is available at
+          <a href="https://github.com/diaspora/diaspora-project-site">Github</a>.
+          You are free to copy, modify and distribute it.
+        </p>
 			</footer>
 		</div>
 	</body>

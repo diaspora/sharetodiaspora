@@ -1,0 +1,36 @@
+/* Development Team */
+
+    David Charte
+    Site: https://joindiaspora.com/u/fdavidcl
+
+    Cypouz
+    Site: https://diaspora-fr.org/u/cypouz
+
+    Giel van Schijndel
+    Site: https://diasp.eu/u/muggenhor
+
+    Jason Robinson
+    Site: https://iliketoast.net/u/jaywink
+
+    Pierre de la Morinerie
+    Site: https://github.com/kemenaran
+
+    Sébastien Adam
+    Site: https://framasphere.org/u/sebastienadam
+
+/* Localizations */
+
+    French: Situphen
+    Site: https://framasphere.org/u/situphen
+
+    German: Marty Crabneck
+    Site: https://wk3.org/u/marty_crabneck
+
+    Italian: Sandro Kensan
+    Site: https://diasp.eu/u/kensan
+
+    Polish: rysiek
+    Site: https://joindiaspora.com/u/rysiek
+
+    Russian: Vitalie Ciubotaru
+    Site: https://joindiaspora.com/u/vitalie_ciubotaru
