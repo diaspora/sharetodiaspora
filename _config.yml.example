@@ -1,7 +1,24 @@
 root_url: https://share.example.com
+
 exclude:
   - .*
+  - bin
+  - bower.json
   - Gemfile
   - Gemfile.lock
   - LICENSE
   - README.md
+
+gems:
+  - jekyll-assets
+
+assets:
+  css_compressor: sass
+  sources:
+    - _assets/bower_components
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets
+  engines:
+    sass:
+      style: compressed

@@ -1,0 +1,12 @@
+{
+  "name": "sharetodiaspora",
+  "private": true,
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "",
+  "license": "AGPL",
+  "dependencies": {
+    "bower": "~1.5.0"
+  }
+}

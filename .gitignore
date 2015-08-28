@@ -1,2 +1,5 @@
-_config.yml
-_site
+/.sass-cache
+/_assets/bower_components
+/_config.yml
+/_site
+/node_modules
