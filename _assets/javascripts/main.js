@@ -36,8 +36,6 @@ var redirect = function() {
       document.querySelector('body').innerHTML="Sharing <b>"+title+"</b> ("+url+") to "+localStorage.lastPod;
       share(localStorage.lastPod);
     } else {
-      document.getElementById('sharetitle').textContent = title;
-      document.getElementById('shareurl').textContent = url;
       crealinks();
       if(urlautolist !== 'none') {
         createpodautocomplete();
@@ -74,7 +72,7 @@ var crealinks = function() {
           }
         }
 
-        document.getElementById('podlist').insertBefore(an, document.getElementById('first'));
+        document.getElementById('podlist').insertBefore(an, document.querySelectorAll('#podlist a')[0]);
       }
     }
   }

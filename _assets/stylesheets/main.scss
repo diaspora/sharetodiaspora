@@ -1,3 +1,21 @@
 /*
  *= require bootstrap/dist/css/bootstrap
  */
+
+body {
+  padding-top: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.navbar {
+  min-height: 20px;
+}
+
+.navbar-brand {
+  font-size: 15px;
+  height: 30px;
+  padding: 5px 15px;
+}

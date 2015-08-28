@@ -11,48 +11,55 @@
     {% javascript main %}
   </head>
   <body>
-    <header>
-      <h2 data-l10n-id="sharingtitle">Sharing</h2>
-      <div id="sharedet">
-        <div id="sharetitle"></div>
-        <div id="shareurl"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <span class="navbar-brand" data-l10n-id="sharingtitle">Sharing</span>
+        </div>
       </div>
-    </header>
-    <section id="podlist">
-      <h3 data-l10n-id="choose">Choose your diaspora* pod</h3>
-      <a title="joindiaspora.com" id="first">joindiaspora.com</a>
-      <a title="pod.geraspora.de">pod.geraspora.de</a>
-      <a title="diasp.eu">diasp.eu</a>
-      <a title="diasporabrazil.org">diasporabrazil.org</a>
-      <a title="podricing.org">podricing.org</a>
-      <a title="diasp.org">diasp.org</a>
-      <a title="framasphere.org">framasphere.org</a>
-      <a title="diaspora-fr.org">diaspora-fr.org</a>
-      <a title="diasp.de">diasp.de</a>
-      <a title="poddery.com">poddery.com</a>
-      <a title="nerdpol.ch">nerdpol.ch</a>
-      <a title="sechat.org">sechat.org</a>
-    </section>
-    <section id="podinput">
-      <h3 data-l10n-id="introduce">or introduce your pod URL</h3>
-
-      <form onsubmit="share(document.getElementById('podurl').value); return false;">
-        <input type="text" id="podurl" placeholder="joindiaspora.com" value="" /><br />
-        <span data-l10n-id="submitshare">
-          <input type="submit" id="podurlsm" data-l10n-id="submitshare" value="Share" />
-        </span>
-      </form>
-    </section>
-    <span class="clear"></span>
-    <div class="bot_opt">
-      <input type="checkbox" id="remember" /><label for="remember" data-l10n-id="remember">Remember my choice, don't ask again</label>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6" id="podlist">
+          <h3 data-l10n-id="choose">Choose your diaspora* pod</h3>
+          {% for pod in site.data.pods %}
+            <a class="btn btn-default btn-block btn-xs" title="{{pod}}">{{pod}}</a>
+          {% endfor %}
+        </div>
+        <div class="col-xs-6">
+          <h3 data-l10n-id="introduce">or introduce your pod URL</h3>
+          <form onsubmit="share(document.getElementById('podurl').value); return false;" id="podinput">
+            <div class="checkbox">
+              <input type="podurl" class="form-control" id="podurl" placeholder="joindiaspora.org">
+            </div>
+            <span data-l10n-id="submitshare">
+              <input type="submit" class="btn btn-default btn-block" id="podurlsm" data-l10n-id="submitshare" value="Share" />
+            </span>
+          </form>
+          <h3 data-l10n-id="options">Advanced options</h3>
+          <div class="checkbox">
+            <label for="remember" data-l10n-id="remember">
+              <input type="checkbox" id="remember"> Remember my choice, don't ask again
+            </label>
+          </div>
+          <div class="checkbox">
+            <label for="markdown" data-l10n-id="markdown">
+              <input type="checkbox" id="markdown"> Use Markdown syntax for link
+            </label>
+          </div>
+          <div class="checkbox">
+            <label for="shorten" data-l10n-id="shorten">
+              <input type="checkbox" id="shorten"> Shorten URL (j.mp)
+            </label>
+          </div>
+          <div class="checkbox">
+            <label for="norem" data-l10n-id="noremember">
+              <input type="checkbox" id="norem"> Never remember my last 3 pods
+            </label>
+          </div>
+          <a class="btn btn-default btn-block delete" id="delete" data-l10n-id="forget">Forget my last 3 pods</a>
+        </div>
+      </div>
     </div>
-      <div class="advanced">
-        <h3 data-l10n-id="options">Advanced options</h3>
-        <input type="checkbox" id="markdown" /><label for="markdown" data-l10n-id="markdown">Use Markdown syntax for link</label><br />
-        <input type="checkbox" id="shorten" /><label for="shorten" data-l10n-id="shorten">Shorten URL (j.mp)</label><p>
-        <input type="checkbox" id="norem" /><label for="norem" data-l10n-id="noremember">Never remember my last 3 pods</label><br />
-        <a class="delete" id="delete" data-l10n-id="forget">Forget my last 3 pods</a>
-      </div>
   </body>
 </html>
