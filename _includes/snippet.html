@@ -1,0 +1,4 @@
+{% capture snippet %}{% include snippets/{{ include.name }}.html %}{% endcapture %}
+
+<p>Example: {{ snippet }}</p>
+<pre>{{ snippet | xml_escape }}</pre>

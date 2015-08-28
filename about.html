@@ -8,154 +8,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="localization" href="/locales/manifest.json">
     {% stylesheet about %}
+    {% javascript about %}
+
+    <script>
+      var firefoxShareData = {
+        "name": "diaspora*",
+        "description": "diaspora* is a distributed social network where you keep control over your data.",
+        "author": "The diaspora* project",
+        "homepageURL": "{{site.root_url}}/about.html",
+        "iconURL":   "{{site.root_url}}/images/diaspora-icon-16.png",
+        "icon32URL": "{{site.root_url}}/images/diaspora-icon-32.png",
+        "icon64URL": "{{site.root_url}}/images/diaspora-icon-64.png",
+        "shareURL": "{{site.root_url}}/?url=%{url}&title=%{title}&notes=%{text}",
+        "version": "2.0.0"
+      };
+    </script>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Advanced Sharer for diaspora*</h1>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/about.html">Advanced Sharer for diaspora*</a>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <div class="container">
+        <img src="{% asset_path about_header.png %}" alt="" class="img-responsive">
+        <h3 class="text-center">Share all teh internetz!</h3>
+      </div>
+    </div>
 
-        {% image about_header.png %}
-        <h2>Share all teh internetz!</h2>
-      </header>
-
-      <article>
-        <h3>Features</h3>
+    <div class="container">
+      <div class="row">
+        <h2>Features</h2>
         <ul>
           <li>Share websites on any diaspora* pod. Popular pods already available on a list.</li>
-          <li>Optionally memorize your last 3 pods.</li>
-          <li>URL shortening (via <a href="http://j.mp">j.mp</a>).</li>
+          <li>Optionally save your last 3 pods.</li>
+          <li>Optional URL shortening via <a href="http://j.mp">j.mp</a>.</li>
           <li>Markdown formatting.</li>
-          <li><b>Privacy</b>: all user data is stored on the browser local storage.
-            Shared URL will be shared with <a href="http://j.mp">j.mp</a> (from Bit.ly) only when URL shortening is enabled.</li>
         </ul>
-      </article>
+      </div>
+    </div>
 
-      <article>
-        <h3>Buttons and add-ons</h3>
+    <div class="container">
+      <div class="row">
+        <h2>Firefox Social Provider</h2>
+        <p>
+          Add a native Share button to the Share Services of Firefox. Click "Share This Page" from the browser
+          toolbar to open the save dialog. Just click the following button and choose <em>Enable Services</em>.
+        </p>
+        <p>
+          <a class="btn btn-success" id="fxAdd">Add to Firefox</a>
+        </p>
 
-        <h4>Sharing buttons</h4>
+        <h3>Add-on for Firefox</h3>
+        <p>
+          If you do not want to use Firefox' Social API, 
+          <a href="https://addons.mozilla.org/es/firefox/addon/diaspora-advanced-sharer/">diaspora* Advanced Sharer</a>
+          by <a href="https://iliketoast.net/u/jaywink">Jason Robinson</a> adds a sharing button to Mozilla Firefox.
+        </p>
+      </div>
+    </div>
 
-        <input type="radio" name="code" id="nojs"/>
-        <label for="nojs">Without JavaScript</label>
+    <div class="container">
+      <div class="row">
+        <h2>Bookmarklet</h2>
+        <p>
+          Instead of using several bookmarklets for several pods, you can just drag this one:
+          <a href="javascript:(function(){f='{{site.root_url}}/?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&notes='+encodeURIComponent(''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text))+'&v=1&';a=function(){if(!window.open(f+'noui=1&jump=doclose','diasporav1','location=yes,links=no,scrollbars=yes,toolbar=no,width=620,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Share on diaspora*</a> to your bookmarks bar.
+        </p>
+      </div>
+    </div>
 
-        <div class="hidden">
-          <a class="testsh" href="{{site.root_url}}/?title=diaspora* Advanced Sharer&url={{site.root_url}}/" target="_blank">
-    <img src="{{site.root_url}}/favicon.png" style="border: 0px solid;" />
-  </a><pre>&lt;a href="{{site.root_url}}/?title=Your title here&url=http://www.example.com/some/path" target="_blank">
-    &lt;img src="{{site.root_url}}/favicon.png" style="border: 0px solid;" />
-  &lt;/a></pre>
+    <div class="container">
+      <div class="row">
+        <h2>Share buttons</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Without JavaScript</h3>
+          {% include snippet.html name="without_js" %}
         </div>
-
-        <input type="radio" name="code" id="btjs"/>
-        <label for="btjs">With JavaScript</label>
-
-        <div class="hidden">
-          <a class="testsh" href="javascript:;" onclick="window.open('{{site.root_url}}/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'das','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=550'); return false;" rel="nofollow" target="_blank">
-  <img src="{{site.root_url}}/favicon.png" style="border: 0px solid;" /></a><pre>&lt;a href="javascript:;" onclick="window.open('{{site.root_url}}/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'das','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=550'); return false;" rel="nofollow" target="_blank">
-  &lt;img src="{{site.root_url}}/favicon.png" style="border: 0px solid;" />
-&lt;/a></pre><p>
+        <div class="col-md-6">
+          <h3>With JavaScript</h3>
+          {% include snippet.html name="with_js" %}
         </div>
-
-        <input type="radio" name="code" id="jstxt"/>
-        <label for="jstxt">With JavaScript & text</label>
-
-        <div class="hidden">
-          <a class="testsh" href="javascript:;" onclick="window.open('{{site.root_url}}/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'das','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=550'); return false;" rel="nofollow" target="_blank" style="padding: 3px 4px 2px; background: #fafafa; border: 1px solid #ddd; font-size: 13px; color: #222; text-decoration: none;">
-    <img src="{{site.root_url}}/favicon.png" style="border: 0px solid;display: inline-block;vertical-align: top;" /> diaspora*</a><pre>&lt;a href="javascript:;" onclick="window.open('{{site.root_url}}/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'das','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=550'); return false;" rel="nofollow" target="_blank"
-  style="padding: 3px 4px 2px; background: #fafafa; border: 1px solid #ddd; font-size: 13px; color: #222; text-decoration: none;">
-    &lt;img src="{{site.root_url}}/favicon.png" style="border: 0px solid;display: inline-block;vertical-align: top;" /> diaspora*
-  &lt;/a></pre>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Without JavaScript, with text</h3>
+          {% include snippet.html name="without_js_with_text" %}
         </div>
-
-        <input type="radio" name="code" id="blgrr"/>
-        <label for="blgrr">Blogger</label>
-
-        <div class="hidden">
-          This method will include a diaspora* share button next to Google +1 button. It is necessary to <a href="http://buzz.blogger.com/2010/06/new-share-buttons.html">enable the sharing buttons</a>.
-          <ul>
-            <li>Enter <a href="http://www.blogger.com/home">your dashboard</a> and choose your blog.</li>
-            <li>In section <b>Template</b>, click on <b>Edit HTML</b>. If a warning appears, click <b>Continue</b>.</li>
-            <li>Check <b>Expand widget templates</b>, press Ctrl+F and write <i>sharebuttons</i>.</li>
-            <li>Find the line <code>&lt;b:includable id='shareButtons' var='post'></code>. Just after that, copy the following code:</li>
-          </ul>
-          <pre>&lt;a expr:href='&quot;{{site.root_url}}/?url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title' target='_blank' title='Share on diaspora'>
-  &lt;img src='{{site.root_url}}/favicon.png' style='width:16px; height:16px; padding:0; border:0; vertical-align:middle;'/>
-&lt;/a></pre>
+        <div class="col-md-6">
+          <h3>With JavaScript and text</h3>
+          {% include snippet.html name="with_js_and_text" %}
         </div>
+      </div>
+    </div>
 
-        <input type="radio" name="code" id="wrpr"/>
-        <label for="wrpr">Wordpress</label>
-
-        <div class="hidden">
+    <div class="container">
+      <div class="row">
+        <h2>Integrations</h2>
+      </div>
+      <div class="row">
+        <h3>Blogger</h3>
+        <p>
+        This method will include a diaspora* share button next to Google +1 button. It is necessary to
+        <a href="http://buzz.blogger.com/2010/06/new-share-buttons.html">enable the sharing buttons</a>.
+        </p>
+        <ul>
+          <li>Enter <a href="http://www.blogger.com/home">your dashboard</a> and choose your blog.</li>
+          <li>In section <b>Template</b>, click on <b>Edit HTML</b>. If a warning appears, click <b>Continue</b>.</li>
+          <li>Check <b>Expand widget templates</b>, press Ctrl+F and write <i>sharebuttons</i>.</li>
+          <li>
+            Find the line <code>&lt;b:includable id='shareButtons' var='post'></code>. Just after that, copy the following code:
+            {% capture snippet %}{% include snippets/blogger.html %}{% endcapture %}
+            <pre style="margin-top: 10px">{{ snippet | xml_escape }}</pre>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>Wordpress</h3>
+        <p>
           <a href="http://wordpress.org/plugins/share-on-diaspora/">Share on diaspora* Plugin</a>,
           by <a href="https://joindiaspora.com/people/bf5954464d47fe88">Vitalie Ciubotaru</a>,
           inserts a <em>Share on diaspora*</em> button onto your Wordpress blog.
-        </div>
-
-        <input type="radio" name="code" id="mvtyp"/>
-        <label for="mvtyp">Movable Type</label>
-
-        <div class="hidden">
+        </p>
+      </div>
+      <div class="row">
+        <h3>Movable Type</h3>
+        <p>
           This method will include a diaspora* share button under the entry's tag list.
-          <ul>
-            <li>In your blog's admin panel go to <strong>Templates</strong> in the section <strong>Design</strong></li>
-            <li>Edit the <strong>Entry</strong> template</li>
-            <li>Inside the <code>&lt;div&gt;</code> tag for the <code>asset-footer</code>, after <code>asset-footer-tags</code> add this snippet:
-            <pre>&lt;p class=&quot;asset-footer-share&quot;&gt;
-    &lt;a href=&quot;{{site.root_url}}/?url=&lt;$mt:EntryPermalink encode_url=&quot;1&quot;$&gt;&amp;title=&lt;$mt:EntryTitle encode_url=&quot;1&quot;$&gt;&quot; target=&quot;_blank&quot; title=&quot;Share on diaspora&quot; style=&quot;padding: 3px 4px 2px; background: #fafafa; border: 1px solid #ddd; color: #222; text-decoration: none;&quot;&gt;
-        &lt;img src=&quot;{{site.root_url}}/favicon.png&quot; style=&quot;border: 0 solid; padding: 0; width: 16px; height: 16px; vertical-align: top;&quot; alt=&quot;Share on diaspora&quot;/&gt; diaspora*
-    &lt;/a&gt;
-&lt;/p&gt;</pre>
-            </li>
-          </ul>
-        </div>
-
-        <h4>Bookmarklet</h4>
-        Instead of using several bookmarklets for several pods, you can just drag this one:
-        <a href="javascript:(function(){f='{{site.root_url}}/?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&notes='+encodeURIComponent(''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text))+'&v=1&';a=function(){if(!window.open(f+'noui=1&jump=doclose','diasporav1','location=yes,links=no,scrollbars=yes,toolbar=no,width=620,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Share on diaspora*</a> to your bookmarks bar.
-
-        <h4>Firefox Social API Extension</h4>
-        Add a native Share button to the Share Services of Firefox. Click "Share This Page" from the browser
-        toolbar to open the save dialog. Just click this button
-        <button onclick="activateSocialFeature(this)">Activate Diaspora* Sharing Service</button> and then choose
-        <em>Enable Services</em>.
-
-        <script>
-          var data = {
-            "name": "Share to Diaspora*",
-            "description": "Diaspora* is a social network where you keep control.",
-            "author": "kemenaran",
-            "homepageURL": "{{site.root_url}}/about.html",
-            "iconURL":   "{{site.root_url}}/images/diaspora-icon-16.png",
-            "icon32URL": "{{site.root_url}}/images/diaspora-icon-32.png",
-            "icon64URL": "{{site.root_url}}/images/diaspora-icon-64.png",
-            "shareURL": "{{site.root_url}}/?url=%{url}&title=%{title}&notes=%{text}",
-            "version": "1.0.0"
-          };
-          function activateSocialFeature(node) {
-            var event = new CustomEvent("ActivateSocialFeature");
-            node.setAttribute("data-service", JSON.stringify(data));
-            node.dispatchEvent(event);
-          }
-        </script>
-
-        <h4>Add-on for Firefox</h4>
-        <a href="https://addons.mozilla.org/es/firefox/addon/diaspora-advanced-sharer/">diaspora* Advanced Sharer</a>
-        by <a href="https://iliketoast.net/u/jaywink">Jason Robinson</a> adds a sharing button to Mozilla Firefox.
-      </article>
-      <footer>
-        <p>
-          This project was created by
-          <a href="{{site.root_url}}/humans.txt">Awesome Contributors</a> and is
-          licensed under the
-          <a target="_blank" href="http://www.gnu.org/licenses/agpl-3.0.html">AGPL</a>.
         </p>
-        <p>
-          Want to help or fork the project? The source code is available at
-          <a href="https://github.com/diaspora/diaspora-project-site">Github</a>.
-          You are free to copy, modify and distribute it.
-        </p>
-      </footer>
+        <ul>
+          <li>In your blog's admin panel go to <strong>Templates</strong> in the section <strong>Design</strong></li>
+          <li>Edit the <strong>Entry</strong> template</li>
+          <li>Inside the <code>&lt;div&gt;</code> tag for the <code>asset-footer</code>, after <code>asset-footer-tags</code> add this snippet:
+            {% capture snippet %}{% include snippets/movable_type.html %}{% endcapture %}
+            <pre style="margin-top: 10px">{{ snippet | xml_escape }}</pre>
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <hr>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <p>
+            This project was created by <a href="{{site.root_url}}/humans.txt">Awesome Contributors</a> and is
+            licensed under the <a target="_blank" href="http://www.gnu.org/licenses/agpl-3.0.html">AGPL</a>.
+            Want to help or fork the project? The source code is available at
+            <a href="https://github.com/diaspora/diaspora-project-site">Github</a>.
+            You are free to copy, modify and distribute it.
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
