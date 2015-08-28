@@ -7,6 +7,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - node_modules
+  - package.json
   - README.md
 
 gems:
