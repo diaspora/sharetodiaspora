@@ -9,6 +9,7 @@ exclude:
   - LICENSE
   - node_modules
   - package.json
+  - Rakefile
   - README.md
 
 gems:
