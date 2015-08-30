@@ -14,7 +14,7 @@ task :top_pod_list, :number_of_pods do |task, args|
   pods.map! do |pod|
     {
       name: pod["name"].downcase == "diaspora*" ? pod["host"] : pod["name"],
-      url: "https://#{pod["host"]}/"
+      host: pod["host"]
     }
   end
 

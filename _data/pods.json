@@ -1,34 +1,34 @@
 [
   {
     "name": "Geraspora*",
-    "url": "https://pod.geraspora.de/"
+    "host": "pod.geraspora.de"
   },
   {
     "name": "Framasphere*",
-    "url": "https://framasphere.org/"
+    "host": "framasphere.org"
   },
   {
     "name": "joindiaspora.com",
-    "url": "https://joindiaspora.com/"
+    "host": "joindiaspora.com"
   },
   {
     "name": "Diaspora pod Diasporg",
-    "url": "https://diasp.org/"
+    "host": "diasp.org"
   },
   {
     "name": "diasp.eu",
-    "url": "https://diasp.eu/"
+    "host": "diasp.eu"
   },
   {
     "name": "Liberdade Digital",
-    "url": "https://liberdade.digital/"
+    "host": "liberdade.digital"
   },
   {
     "name": "MondiAspora*",
-    "url": "https://mondiaspora.net/"
+    "host": "mondiaspora.net"
   },
   {
     "name": "DiasporaBR",
-    "url": "https://diasporabr.com.br/"
+    "host": "diasporabr.com.br"
   }
 ]

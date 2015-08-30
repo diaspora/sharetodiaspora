@@ -23,7 +23,7 @@
         <div class="col-xs-6" id="podlist">
           <h3 data-l10n-id="choose">Choose your diaspora* pod</h3>
           {% for pod in site.data.pods %}
-            <a class="btn btn-default btn-block btn-xs" data-url="{{pod.url}}">{{pod.name}}</a>
+            <a class="btn btn-default btn-block btn-xs" data-host="{{pod.host}}">{{pod.name}}</a>
           {% endfor %}
         </div>
         <div class="col-xs-6">
