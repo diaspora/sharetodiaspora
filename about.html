@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Advanced Sharer for diaspora*</title>
+    <title>Share to diaspora*</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="localization" href="/locales/manifest.json">
     {% stylesheet about %}
     {% javascript about %}
 
@@ -40,18 +39,17 @@
     </div>
 
     <div class="container">
-      <div class="row">
-        <h2>Features</h2>
-        <ul>
-          <li>Share websites on any diaspora* pod. Popular pods already available on a list.</li>
-          <li>Optionally save your last 3 pods.</li>
-          <li>Markdown formatting.</li>
-        </ul>
+      <div class="row col-xs-12">
+        <p>
+          Welcome! You found the website of our little cross-pod sharing application. This was mainly
+          created to embed the share application into Firefox, but it is also possible to use it as
+          a dedicated "share to diaspora*" button in your favorite website.
+        </p>
       </div>
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row col-xs-12">
         <h2>Firefox Social Provider</h2>
         <p>
           Add a native Share button to the Share Services of Firefox. Click "Share This Page" from the browser
@@ -60,28 +58,31 @@
         <p>
           <a class="btn btn-success" id="fxAdd">Add to Firefox</a>
         </p>
-
-        <h3>Add-on for Firefox</h3>
-        <p>
-          If you do not want to use Firefox' Social API, 
-          <a href="https://addons.mozilla.org/es/firefox/addon/diaspora-advanced-sharer/">diaspora* Advanced Sharer</a>
-          by <a href="https://iliketoast.net/u/jaywink">Jason Robinson</a> adds a sharing button to Mozilla Firefox.
-        </p>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
-        <h2>Bookmarklet</h2>
-        <p>
-          Instead of using several bookmarklets for several pods, you can just drag this one:
-          <a href="javascript:(function(){f='{{site.root_url}}/?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&notes='+encodeURIComponent(''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text))+'&v=1&';a=function(){if(!window.open(f+'noui=1&jump=doclose','diasporav1','location=yes,links=no,scrollbars=yes,toolbar=no,width=620,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Share on diaspora*</a> to your bookmarks bar.
-        </p>
+        <div class="col-md-6">
+          <h2>Bookmarklet</h2>
+          <p>
+            Instead of using several bookmarklets for several pods, you can just drag this one:
+            <a href="javascript:(function(){f='{{site.root_url}}/?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&notes='+encodeURIComponent(''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text))+'&v=1&';a=function(){if(!window.open(f+'noui=1&jump=doclose','diasporav1','location=yes,links=no,scrollbars=yes,toolbar=no,width=620,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Share on diaspora*</a> to your bookmarks bar.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h2>Add-on for Firefox</h2>
+          <p>
+            If you do not want to use Firefox' Social API or the bookmarklet,
+            <a href="https://addons.mozilla.org/es/firefox/addon/diaspora-advanced-sharer/">diaspora* Advanced Sharer</a>
+            by <a href="https://iliketoast.net/u/jaywink">Jason Robinson</a> adds a sharing button to Mozilla Firefox.
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row col-xs-12">
         <h2>Share buttons</h2>
       </div>
       <div class="row">
@@ -106,61 +107,16 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <h2>Integrations</h2>
-      </div>
-      <div class="row">
-        <h3>Blogger</h3>
-        <p>
-        This method will include a diaspora* share button next to Google +1 button. It is necessary to
-        <a href="http://buzz.blogger.com/2010/06/new-share-buttons.html">enable the sharing buttons</a>.
-        </p>
-        <ul>
-          <li>Enter <a href="http://www.blogger.com/home">your dashboard</a> and choose your blog.</li>
-          <li>In section <b>Template</b>, click on <b>Edit HTML</b>. If a warning appears, click <b>Continue</b>.</li>
-          <li>Check <b>Expand widget templates</b>, press Ctrl+F and write <i>sharebuttons</i>.</li>
-          <li>
-            Find the line <code>&lt;b:includable id='shareButtons' var='post'></code>. Just after that, copy the following code:
-            {% capture snippet %}{% include snippets/blogger.html %}{% endcapture %}
-            <pre style="margin-top: 10px">{{ snippet | xml_escape }}</pre>
-          </li>
-        </ul>
-      </div>
-      <div class="row">
-        <h3>Wordpress</h3>
-        <p>
-          <a href="http://wordpress.org/plugins/share-on-diaspora/">Share on diaspora* Plugin</a>,
-          by <a href="https://joindiaspora.com/people/bf5954464d47fe88">Vitalie Ciubotaru</a>,
-          inserts a <em>Share on diaspora*</em> button onto your Wordpress blog.
-        </p>
-      </div>
-      <div class="row">
-        <h3>Movable Type</h3>
-        <p>
-          This method will include a diaspora* share button under the entry's tag list.
-        </p>
-        <ul>
-          <li>In your blog's admin panel go to <strong>Templates</strong> in the section <strong>Design</strong></li>
-          <li>Edit the <strong>Entry</strong> template</li>
-          <li>Inside the <code>&lt;div&gt;</code> tag for the <code>asset-footer</code>, after <code>asset-footer-tags</code> add this snippet:
-            {% capture snippet %}{% include snippets/movable_type.html %}{% endcapture %}
-            <pre style="margin-top: 10px">{{ snippet | xml_escape }}</pre>
-          </li>
-        </ul>
-      </div>
-    </div>
-
     <hr>
     <footer>
       <div class="container">
-        <div class="row">
+        <div class="row col-xs-12">
           <p>
             This project was created by <a href="{{site.root_url}}/humans.txt">Awesome Contributors</a> and is
             licensed under the <a target="_blank" href="http://www.gnu.org/licenses/agpl-3.0.html">AGPL</a>.
             Want to help or fork the project? The source code is available at
-            <a href="https://github.com/diaspora/diaspora-project-site">Github</a>.
-            You are free to copy, modify and distribute it.
+            <a href="https://github.com/diaspora/diaspora-project-site">Github</a>. Check the Github repository for
+            information on how to contribute.
           </p>
         </div>
       </div>

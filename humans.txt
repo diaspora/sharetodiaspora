@@ -1,10 +1,12 @@
 /* Development Team */
 
-    David Charte
-    Site: https://joindiaspora.com/u/fdavidcl
-
     Dennis Schubert
     Site: http://schub.io
+
+/* Original Development Team, working the old codebase */
+
+    David Charte
+    Site: https://joindiaspora.com/u/fdavidcl
 
     Cypouz
     Site: https://diaspora-fr.org/u/cypouz
