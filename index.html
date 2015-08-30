@@ -30,7 +30,7 @@
           <h3 data-l10n-id="introduce">or introduce your pod URL</h3>
           <form onsubmit="share(document.getElementById('podurl').value); return false;" id="podinput">
             <div class="checkbox">
-              <input type="podurl" class="form-control" id="podurl" placeholder="joindiaspora.org">
+              <input type="podurl" class="form-control" id="podurl" placeholder="pod.example.com">
             </div>
             <span data-l10n-id="submitshare">
               <input type="submit" class="btn btn-default btn-block" id="podurlsm" data-l10n-id="submitshare" value="Share" />
@@ -48,16 +48,10 @@
             </label>
           </div>
           <div class="checkbox">
-            <label for="shorten" data-l10n-id="shorten">
-              <input type="checkbox" id="shorten"> Shorten URL (j.mp)
-            </label>
-          </div>
-          <div class="checkbox">
             <label for="norem" data-l10n-id="noremember">
               <input type="checkbox" id="norem"> Never remember my last 3 pods
             </label>
           </div>
-          <a class="btn btn-default btn-block delete" id="delete" data-l10n-id="forget">Forget my last 3 pods</a>
         </div>
       </div>
     </div>
