@@ -5,12 +5,16 @@ var PreferenceStorage = (function() {
 
   PreferenceStorage.prototype = {
     get: function(key) {
-      return localStorage.getItem(key);
+      try {
+        return JSON.parse(localStorage.getItem(key));
+      } catch (_) {
+        return undefined;
+      }
     },
 
     set: function(key, value) {
       if (value) {
-        localStorage.setItem(key, value);
+        localStorage.setItem(key, JSON.stringify(value));
       } else {
         localStorage.removeItem(key);
       }
