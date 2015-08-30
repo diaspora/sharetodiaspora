@@ -22,6 +22,10 @@ var PreferenceStorage = (function() {
 
     remove: function(key) {
       this.set(key);
+    },
+
+    clear: function() {
+      localStorage.clear();
     }
   };
 
