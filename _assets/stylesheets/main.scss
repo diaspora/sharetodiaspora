@@ -1,9 +1,27 @@
 /*
  *= require bootstrap/dist/css/bootstrap
+ *= require spinkit/scss/spinners/10-fading-circle
  */
 
 body {
   padding: 20px 0;
+}
+
+.loader {
+  background-color: white;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 100;
+
+  .sk-fading-circle {
+    height: 90px;
+    margin-top: -45px;
+    top: 50%;
+    width: 90px;
+  }
 }
 
 h3 {

@@ -3,6 +3,7 @@
  *
  *= require lib/diaspora_sharer
  */
+/* global DiasporaSharer */
 
 "use strict";
 
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
   diasporaSharer.initDom({
     customHostForm: "#customHostForm",
     customHostInput: "#customHostInput",
+    loader: ".loader",
     podListItems: "#podlist a",
     markdownCheckbox: "#markdown",
     rememberCheckbox: "#remember",

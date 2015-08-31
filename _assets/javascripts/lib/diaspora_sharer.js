@@ -8,6 +8,7 @@
 
 var DiasporaSharer = (function() {
   function DiasporaSharer() {
+    this._loader = false;
     this._params = Utils.locationSearchToObject();
     this._prefs = new PreferenceStorage();
   }
@@ -39,6 +40,11 @@ var DiasporaSharer = (function() {
           this._prefs.set("lastCustomHost", customHostInput.value);
           this.shareToPod(customHostInput.value);
         }.bind(this));
+      }
+
+      var loader = document.querySelector(selectors.loader);
+      if (loader) {
+        this._loader = loader;
       }
 
       var podListItems = document.querySelectorAll(selectors.podListItems);
@@ -103,7 +109,16 @@ var DiasporaSharer = (function() {
     },
 
     redirect: function(target) {
+      this.setLoader(true);
       window.location = target;
+    },
+
+    setLoader: function(state) {
+      if (state) {
+        this._loader.style.display = "block";
+      } else {
+        this._loader.style.display = "none";
+      }
     }
   };
 
