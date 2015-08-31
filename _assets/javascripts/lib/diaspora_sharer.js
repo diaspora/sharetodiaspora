@@ -17,6 +17,7 @@ var DiasporaSharer = (function() {
     earlyRedirect: function() {
       if (!(this._params.title || this._params.url)) {
         this.redirect("/about.html");
+        return;
       }
 
       var autojumpPod = this._prefs.get("autojumpPod");
