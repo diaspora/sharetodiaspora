@@ -2,7 +2,7 @@ Share to diaspora*
 ==================
 
 This was once based on [sharetodiaspora.github.io][oldcodebase-github] but has
-moved forward into a seperate project to allow us customizations to host this
+moved forward into a separate project to allow us customizations to host this
 as an official project asset and promote it to allow embedding into browsers,
 for example.
 
