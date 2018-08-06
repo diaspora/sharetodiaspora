@@ -8,20 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% asset about.css %}
     {% asset about.js %}
-
-    <script>
-      var firefoxShareData = {
-        "name": "diaspora*",
-        "description": "diaspora* is a distributed social network where you keep control over your data.",
-        "author": "The diaspora* project",
-        "homepageURL": "{{site.root_url}}/about.html",
-        "iconURL":   "{% data_url icons/diaspora-16.png %}",
-        "icon32URL": "{% data_url icons/diaspora-32.png %}",
-        "icon64URL": "{% data_url icons/diaspora-64.png %}",
-        "shareURL": "{{site.root_url}}/?url=%{url}&title=%{title}&notes=%{text}",
-        "version": "2.1.0"
-      };
-    </script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -58,19 +44,6 @@
         </p>
         <p>
           <a class="btn btn-danger" id="delPrefs">Reset preferences</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row col-xs-12">
-        <h2>Firefox Social Provider</h2>
-        <p>
-          Add a native Share button to the Share Services of Firefox. Click "Share This Page" from the browser
-          toolbar to open the save dialog. Just click the following button and choose <em>Enable Services</em>.
-        </p>
-        <p>
-          <a class="btn btn-success" id="fxAdd">Add to Firefox</a>
         </p>
       </div>
     </div>
