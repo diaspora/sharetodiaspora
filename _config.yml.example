@@ -8,6 +8,7 @@ exclude:
   - LICENSE
   - Rakefile
   - README.md
+  - vendor
 
 plugins:
   - jekyll-assets
