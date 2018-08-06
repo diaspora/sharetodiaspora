@@ -3,12 +3,9 @@ root_url: https://share.example.com
 exclude:
   - .*
   - bin
-  - bower.json
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - node_modules
-  - package.json
   - Rakefile
   - README.md
 
@@ -18,7 +15,6 @@ plugins:
 assets:
   css_compressor: sass
   sources:
-    - _assets/bower_components
     - _assets/images
     - _assets/javascripts
     - _assets/stylesheets

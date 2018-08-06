@@ -1,8 +1,0 @@
-<choose "Wähle Deinen diaspora* pod">
-<customhost "oder gibt Deine pod-Adresse ein">
-<markdown "Markdown für Link verwenden">
-<preferences "Einstellungen">
-<remember "Meine Auswahl speichern und nicht nochmal fragen">
-<reset "Einstellungen zurücksetzen">
-<submitshare "<input value='Teilen' />">
-<title "Auf diaspora* teilen">

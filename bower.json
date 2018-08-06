@@ -1,8 +1,0 @@
-{
-  "name": "sharetodiaspora",
-  "dependencies": {
-    "bootstrap": "~3.3.5",
-    "l20n": "~3.0.5",
-    "spinkit": "~1.2.1"
-  }
-}

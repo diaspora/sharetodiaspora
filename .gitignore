@@ -1,7 +1,4 @@
-_assets/bower_components
 _config.yml
 _site
-.asset-cache
 .jekyll-cache
 .sass-cache
-node_modules

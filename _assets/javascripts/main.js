@@ -1,6 +1,4 @@
 /*
- *= require l20n/dist/webcompat/l20n
- *
  *= require lib/diaspora_sharer
  */
 /* global DiasporaSharer */

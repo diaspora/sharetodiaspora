@@ -17,7 +17,7 @@
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <span class="navbar-brand" data-l10n-id="title">Share to diaspora*</span>
+          <span class="navbar-brand">Share to diaspora*</span>
         </div>
       </div>
     </nav>
@@ -25,39 +25,39 @@
       <noscript>
         <div class="row">
           <div class="col-xs-12">
-            <div class="alert alert-danger" role="alert" data-l10n-id="javascript-disabled">Please enable JavaScript for {{site.root_url}} to use this widget!</div>
+            <div class="alert alert-danger" role="alert">Please enable JavaScript for {{site.root_url}} to use this widget!</div>
           </div>
         </div>
       </noscript>
       <div class="row">
         <div class="col-xs-6" id="podlist">
-          <h3 data-l10n-id="choose">Choose your diaspora* pod</h3>
+          <h3>Choose your diaspora* pod</h3>
           {% for pod in site.data.pods %}
             <a class="btn btn-default btn-block btn-xs" data-host="{{pod.host}}">{{pod.name}}</a>
           {% endfor %}
         </div>
         <div class="col-xs-6">
-          <h3 data-l10n-id="customhost">or enter your pod URL</h3>
+          <h3>or enter your pod URL</h3>
           <form id="customHostForm">
             <div class="checkbox">
               <input type="customHostInput" class="form-control" id="customHostInput" placeholder="pod.example.com">
             </div>
-            <span data-l10n-id="submitshare">
-              <input type="submit" class="btn btn-default btn-block" data-l10n-id="submitshare" value="Share" />
+            <span>
+              <input type="submit" class="btn btn-default btn-block" />
             </span>
           </form>
-          <h3 data-l10n-id="preferences">Preferences</h3>
+          <h3>Preferences</h3>
           <div class="checkbox">
             <label for="remember">
-              <input type="checkbox" id="remember"> <span data-l10n-id="remember">Remember my choice, don't ask again</span>
+              <input type="checkbox" id="remember"> <span>Remember my choice, don't ask again</span>
             </label>
           </div>
           <div class="checkbox">
             <label for="markdown">
-              <input type="checkbox" id="markdown"> <span data-l10n-id="markdown">Use Markdown syntax for link</span>
+              <input type="checkbox" id="markdown"> <span>Use Markdown syntax for link</span>
             </label>
           </div>
-          <a class="btn btn-default btn-block" data-l10n-id="reset" id="reset">
+          <a class="btn btn-default btn-block">
             Reset preferences
           </a>
         </div>

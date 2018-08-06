@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     activesupport (5.2.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -72,6 +73,10 @@ GEM
       forwardable-extended (~> 2.6)
     public_suffix (3.0.2)
     rack (2.0.5)
+    rails-assets-bootstrap (3.3.7)
+      rails-assets-jquery (>= 1.9.1, < 4)
+    rails-assets-jquery (3.3.1)
+    rails-assets-spinkit (1.2.5)
     rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
@@ -99,6 +104,8 @@ DEPENDENCIES
   jekyll
   jekyll-assets
   mimemagic
+  rails-assets-bootstrap (= 3.3.7)!
+  rails-assets-spinkit!
   rake
 
 BUNDLED WITH
