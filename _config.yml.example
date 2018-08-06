@@ -12,7 +12,7 @@ exclude:
   - Rakefile
   - README.md
 
-gems:
+plugins:
   - jekyll-assets
 
 assets:
