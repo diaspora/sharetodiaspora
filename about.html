@@ -50,19 +50,11 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-xs-12">
           <h2>Bookmarklet</h2>
           <p>
             Instead of using several bookmarklets for several pods, you can just drag this one:
             <a href="javascript:(function(){f='{{site.root_url}}/?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&notes='+encodeURIComponent(''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text))+'&v=1&';a=function(){if(!window.open(f+'noui=1&jump=doclose','diasporav1','location=yes,links=no,scrollbars=yes,toolbar=no,width=620,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Share on diaspora*</a> to your bookmarks bar.
-          </p>
-        </div>
-        <div class="col-md-6">
-          <h2>Add-on for Firefox</h2>
-          <p>
-            If you do not want to use Firefox' Social API or the bookmarklet,
-            <a href="https://addons.mozilla.org/es/firefox/addon/diaspora-advanced-sharer/">diaspora* Advanced Sharer</a>
-            by <a href="https://iliketoast.net/u/jaywink">Jason Robinson</a> adds a sharing button to Mozilla Firefox.
           </p>
         </div>
       </div>
