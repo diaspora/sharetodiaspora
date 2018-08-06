@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <title>Share to diaspora*</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% stylesheet about %}
-    {% javascript about %}
+    {% asset about.css %}
+    {% asset about.js %}
 
     <script>
       var firefoxShareData = {
@@ -33,7 +33,7 @@
     </nav>
     <div class="jumbotron">
       <div class="container">
-        <img src="{% asset_path about_header.png %}" alt="" class="img-responsive">
+        <img src="{% asset about_header.png @path %}" alt="" class="img-responsive">
         <h3 class="text-center">Share all teh internetz!</h3>
       </div>
     </div>
